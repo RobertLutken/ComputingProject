@@ -16,5 +16,39 @@ namespace CIP
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_OnMouseEnter(object sender, EventArgs e)
+        {
+            button1.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
+         
+        }
+
+        private void button1_MouseClick(object sender, MouseEventArgs e)
+        {
+            button1.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
+      
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            button1.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
+          
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeft.png");
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftEnter.png");
+        }
+
+
     }
 }
