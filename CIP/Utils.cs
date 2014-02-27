@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
+using System.Drawing;
 namespace CIP
 {
     class Utils
@@ -48,5 +52,6 @@ namespace CIP
            }
            return localIP;
        }
+    
     }
 }
