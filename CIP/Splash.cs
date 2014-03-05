@@ -12,6 +12,7 @@ namespace CIP
 {
     public partial class Splash : Form
     {
+        
         public Splash()
         {
             InitializeComponent();
@@ -45,8 +46,22 @@ namespace CIP
         private void btnContinue_Click(object sender, EventArgs e)
         {
             Connection connectionWindow = new Connection();
+            EnableDoubleBuffering();
             connectionWindow.Show();
             this.Hide();
+        }
+               
+        private void Splash_Load(object sender, EventArgs e)
+        {
+            this.DoubleBuffered = true;
+        }
+        public void EnableDoubleBuffering()
+        {
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+
+            this.DoubleBuffered = true;
+            this.UpdateStyles();
         }
       
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnContinue = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -37,6 +38,28 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Image = global::CIP.Properties.Resources.ArrowRight;
+            this.btnContinue.Location = new System.Drawing.Point(957, 0);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnContinue.Size = new System.Drawing.Size(156, 829);
+            this.btnContinue.TabIndex = 13;
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            this.btnContinue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnContinue_MouseClick);
+            this.btnContinue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnContinue_MouseDown);
+            this.btnContinue.MouseEnter += new System.EventHandler(this.btnContinue_MouseEnter);
+            this.btnContinue.MouseLeave += new System.EventHandler(this.btnContinue_MouseLeave);
+            this.btnContinue.MouseHover += new System.EventHandler(this.btnContinue_MouseHover);
+            this.btnContinue.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnContinue_MouseUp);
             // 
             // label2
             // 
@@ -133,7 +156,7 @@
             this.btnPrevious.Location = new System.Drawing.Point(0, 0);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPrevious.Size = new System.Drawing.Size(156, 1020);
+            this.btnPrevious.Size = new System.Drawing.Size(156, 829);
             this.btnPrevious.TabIndex = 12;
             this.btnPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -152,7 +175,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
-            this.ClientSize = new System.Drawing.Size(1297, 1020);
+            this.ClientSize = new System.Drawing.Size(1112, 829);
+            this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -161,10 +185,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Transparent;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Connection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connection";
+            this.Load += new System.EventHandler(this.Connection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +207,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnContinue;
     }
 }

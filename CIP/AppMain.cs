@@ -15,18 +15,26 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 namespace CIP
 {
-    public partial class Form1 : Form
+    public partial class AppMain : Form
     {
         SyntaxHighlighter syHighlight = new SyntaxHighlighter();
-        public Form1()
+        public AppMain()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
             timer1.Start();
             lbNetBios.Text = Environment.UserName.ToString() + "@" + Utils.GetLocalIPAddress();
           
 
         }
+        public void EnableDoubleBuffering()
+        {
 
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+
+            this.DoubleBuffered = true;
+            this.UpdateStyles();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -71,6 +79,7 @@ namespace CIP
             // if tutorial == beigning 
             //      display Splash
             Splash splash = new Splash();
+            EnableDoubleBuffering();
             splash.Show();
             this.Hide();
 
@@ -189,6 +198,8 @@ namespace CIP
         {
             syHighlight.Highlight(richTextBox1, lbTime);
         }
+
+
 
     }
 }

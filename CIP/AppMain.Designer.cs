@@ -1,6 +1,6 @@
 ﻿namespace CIP
 {
-    partial class Form1
+    partial class AppMain
     {
         /// <summary>
         /// Required designer variable.
@@ -134,6 +134,7 @@
             this.lbLessonDescription.TabIndex = 5;
             this.lbLessonDescription.Text = "Welcome to your first tutorial ! \r\nBelow is a big box where you write your code.\r" +
     "\nType the words :\r\nprint \"hello world\"\r\n\r\nThen press the continue arrow ! ";
+            
             // 
             // btnContinue
             // 
@@ -182,12 +183,12 @@
             this.richTextBox1.ZoomFactor = 0.5F;
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // Form1
+            // AppMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Turquoise;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
             this.ClientSize = new System.Drawing.Size(1112, 829);
             this.Controls.Add(this.lbLessonDescription);
@@ -196,7 +197,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnContinue);
-            this.Name = "Form1";
+            this.Name = "AppMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
