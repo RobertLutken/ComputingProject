@@ -66,6 +66,13 @@ namespace CIP
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Go to previous tutorial 
+
+            // if tutorial == beigning 
+            //      display Splash
+            Splash splash = new Splash();
+            splash.Show();
+            this.Hide();
 
         }
 

@@ -81,21 +81,31 @@ namespace CIP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] Assassin {
+        internal static System.Drawing.Bitmap gradient_background_wallpaper_u___ibackgroundz_com {
             get {
-                object obj = ResourceManager.GetObject("Assassin", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("gradient-background-wallpaper-u-.-ibackgroundz.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gradient_background_wallpaper_u___ibackgroundz_com {
+        internal static System.Drawing.Bitmap splashLogos {
             get {
-                object obj = ResourceManager.GetObject("gradient-background-wallpaper-u-.-ibackgroundz.com", resourceCulture);
+                object obj = ResourceManager.GetObject("splashLogos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap splashLogos1 {
+            get {
+                object obj = ResourceManager.GetObject("splashLogos1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

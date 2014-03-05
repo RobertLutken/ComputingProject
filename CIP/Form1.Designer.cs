@@ -29,47 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnContinue = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNetBios = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbLessonTitle = new System.Windows.Forms.Label();
             this.lbLessonDescription = new System.Windows.Forms.Label();
+            this.btnContinue = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnContinue
-            // 
-            this.btnContinue.AutoSize = true;
-            this.btnContinue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.BackgroundImage = global::CIP.Properties.Resources.ArrowRight;
-            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnContinue.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.ForeColor = System.Drawing.Color.Transparent;
-            this.btnContinue.Image = global::CIP.Properties.Resources.ArrowRight;
-            this.btnContinue.Location = new System.Drawing.Point(956, 0);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnContinue.Size = new System.Drawing.Size(156, 829);
-            this.btnContinue.TabIndex = 0;
-            this.btnContinue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnContinue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnContinue.UseVisualStyleBackColor = true;
-            this.btnContinue.Click += new System.EventHandler(this.button1_Click);
-            this.btnContinue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
-            this.btnContinue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
-            this.btnContinue.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
-            this.btnContinue.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btnContinue.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
             // 
             // btnPrevious
             // 
@@ -140,23 +110,6 @@
             this.lbTime.Text = "label1";
             this.lbTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.AcceptsTab = true;
-            this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.EnableAutoDragDrop = true;
-            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(171, 268);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(779, 435);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.ZoomFactor = 0.5F;
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // lbLessonTitle
             // 
             this.lbLessonTitle.AutoSize = true;
@@ -182,11 +135,59 @@
             this.lbLessonDescription.Text = "Welcome to your first tutorial ! \r\nBelow is a big box where you write your code.\r" +
     "\nType the words :\r\nprint \"hello world\"\r\n\r\nThen press the continue arrow ! ";
             // 
+            // btnContinue
+            // 
+            this.btnContinue.AutoSize = true;
+            this.btnContinue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.BackgroundImage = global::CIP.Properties.Resources.ArrowRight;
+            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnContinue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.ForeColor = System.Drawing.Color.Transparent;
+            this.btnContinue.Image = global::CIP.Properties.Resources.ArrowRight;
+            this.btnContinue.Location = new System.Drawing.Point(956, 0);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnContinue.Size = new System.Drawing.Size(156, 829);
+            this.btnContinue.TabIndex = 0;
+            this.btnContinue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnContinue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.Click += new System.EventHandler(this.button1_Click);
+            this.btnContinue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
+            this.btnContinue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.btnContinue.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.btnContinue.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btnContinue.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.AcceptsTab = true;
+            this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.EnableAutoDragDrop = true;
+            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(171, 268);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(779, 435);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.ZoomFactor = 0.5F;
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Turquoise;
             this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
             this.ClientSize = new System.Drawing.Size(1112, 829);
             this.Controls.Add(this.lbLessonDescription);
@@ -207,15 +208,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbNetBios;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lbLessonTitle;
         private System.Windows.Forms.Label lbLessonDescription;
+        private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
