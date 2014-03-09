@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIP.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,32 +19,31 @@ namespace CIP
             InitializeComponent();
         }
 
-        private void btnContinue_MouseClick(object sender, MouseEventArgs e)
+          private void btnContinue_MouseClick(object sender, MouseEventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
+            btnContinue.Image = Resources.ArrowRightClick;// btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
         }
 
         private void btnContinue_MouseDown(object sender, MouseEventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
+            btnContinue.Image = Resources.ArrowRightClick;  //btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
         }
 
         private void btnContinue_MouseEnter(object sender, EventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightHover.png");
+            btnContinue.Image = Resources.ArrowRightHover;  //btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightHover.png");
         }
 
         private void btnContinue_MouseLeave(object sender, EventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRight.png");
+            btnContinue.Image = Resources.ArrowRight;  //btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRight.png");
         }
 
         private void btnContinue_MouseUp(object sender, MouseEventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
+            btnContinue.Image = Resources.ArrowRight; //btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRight.png");
         }
-
-        private void btnContinue_Click(object sender, EventArgs e)
+       public void btnContinue_Click(object sender, EventArgs e)
         {
             Connection connectionWindow = new Connection();
             EnableDoubleBuffering();

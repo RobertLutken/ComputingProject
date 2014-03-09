@@ -46,7 +46,7 @@
             this.btnPrevious.AutoSize = true;
             this.btnPrevious.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrevious.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.btnPrevious.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -134,7 +134,7 @@
             this.lbLessonDescription.TabIndex = 5;
             this.lbLessonDescription.Text = "Welcome to your first tutorial ! \r\nBelow is a big box where you write your code.\r" +
     "\nType the words :\r\nprint \"hello world\"\r\n\r\nThen press the continue arrow ! ";
-            
+            this.lbLessonDescription.Click += new System.EventHandler(this.lbLessonDescription_Click);
             // 
             // btnContinue
             // 
@@ -170,17 +170,17 @@
             // 
             this.richTextBox1.AcceptsTab = true;
             this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.EnableAutoDragDrop = true;
-            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 20F);
+            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
             this.richTextBox1.Location = new System.Drawing.Point(171, 268);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.richTextBox1.Size = new System.Drawing.Size(779, 435);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.ZoomFactor = 0.5F;
+            this.richTextBox1.Text = "print \"Hello world\"";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // AppMain
@@ -189,7 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1112, 829);
             this.Controls.Add(this.lbLessonDescription);
             this.Controls.Add(this.lbLessonTitle);

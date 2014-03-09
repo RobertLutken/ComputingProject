@@ -29,9 +29,11 @@ namespace CIP
         }
         public void EnableDoubleBuffering()
         {
-
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-
+            // Set the value of the double-buffering style bits to true. 
+            this.SetStyle(ControlStyles.DoubleBuffer |
+               ControlStyles.UserPaint |
+               ControlStyles.AllPaintingInWmPaint,
+               true);
             this.DoubleBuffered = true;
             this.UpdateStyles();
         }
@@ -47,29 +49,29 @@ namespace CIP
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
+            btnContinue.Image = Resources.ArrowRightClick; // btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
       
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
-          btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
+            btnContinue.Image = Resources.ArrowRightClick;// btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightClick.png");
           
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRight.png");
+            btnContinue.Image = Resources.ArrowRight; btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRight.png");
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightHover.png");
+            btnContinue.Image = Resources.ArrowRightHover; //btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightHover.png");
         }
 
         private void button1_MouseUp(object sender, MouseEventArgs e)
         {
-            btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightHover.png");
+            btnContinue.Image = Resources.ArrowRightHover;   //btnContinue.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowRightHover.png");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,39 +89,40 @@ namespace CIP
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
+            btnContinue.Image = Resources.ArrowLeftClick; // btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
+            btnContinue.Image = Resources.ArrowLeftHover; //  btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
         }
 
         private void button2_MouseHover(object sender, EventArgs e)
         {
-            btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
+            btnContinue.Image = Resources.ArrowLeftHover; // btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
         }
 
         private void button2_MouseUp(object sender, MouseEventArgs e)
         {
             // Reset to Hover 
-            btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
+            btnContinue.Image = Resources.ArrowLeftHover; //  btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
         {
             // Reset to default state
-            btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeft.png");
+            btnContinue.Image = Resources.ArrowLeft; // btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeft.png");
         }
 
         private void button2_MouseDown(object sender, MouseEventArgs e)
         {
-            btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
+            btnContinue.Image = Resources.ArrowLeftClick; //  btnPrevious.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftClick.png");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.lbTime.Text = Utils.GetTOD();
+           this.lbTime.Text = Utils.GetTOD();
+       
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -136,13 +139,13 @@ namespace CIP
             public void Highlight(RichTextBox tb, Label takeFocus)
             {
 
-                string keywords = @"\b(def|print|for|while|do|if|else|elif|foreach)\b";
+                string keywords = @"\b(and|as|assert|break|class|continue|def|del|elif|else|exept|exec|finally|for|from|global|if|import|in|is|lambda|not|or|pass|raise|return|try|while|with|yeild|print|global)\b";
                 MatchCollection keywordMatches = Regex.Matches(tb.Text, keywords);
 
-                string types = @"\b(Console)\b";
+                string types = @"\b(bool|int|float|complex|list|tuple|range|str|byte|bytes|NULL|class)\b";
                 MatchCollection typeMatches = Regex.Matches(tb.Text, types);
 
-                string comments = @"(\#\#.+?$|\/\*.+?\*\/)";
+                string comments = "(\\#.+?$|\"\"\".+?\"\"\")";
                 MatchCollection commentsMatches = Regex.Matches(tb.Text, comments);
 
                 string strings = "\".+?\"";
@@ -150,7 +153,7 @@ namespace CIP
 
                 int originalPosition = tb.SelectionStart;
                 int originalLength = tb.SelectionLength;
-                Color originalColour = Color.White;
+                Color originalColour = Color.Black;
                 takeFocus.Focus();
 
                 tb.SelectionStart = 0;
@@ -161,7 +164,7 @@ namespace CIP
                 {
                     tb.SelectionStart = m.Index;
                     tb.SelectionLength = m.Length;
-                    tb.SelectionColor = Color.Blue;
+                    tb.SelectionColor = Color.CornflowerBlue;
 
                 }
 
@@ -176,7 +179,7 @@ namespace CIP
                 {
                     tb.SelectionStart = m.Index;
                     tb.SelectionLength = m.Length;
-                    tb.SelectionColor = Color.Green;
+                    tb.SelectionColor = Color.Orange;
                 }
 
                 foreach (Match m in stringsMatches)
@@ -197,6 +200,11 @@ namespace CIP
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             syHighlight.Highlight(richTextBox1, lbTime);
+        }
+
+        private void lbLessonDescription_Click(object sender, EventArgs e)
+        {
+
         }
 
 

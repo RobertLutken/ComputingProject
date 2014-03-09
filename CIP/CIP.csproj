@@ -49,6 +49,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utilitys">
+      <HintPath>..\Utilitys\bin\Debug\Utilitys.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs">
@@ -119,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ArrowLeftClick.png" />
+    <None Include="Resources\InfoPannel.png" />
+    <None Include="Resources\ArrowRightHover.png" />
+    <None Include="Resources\ArrowRightClick.png" />
+    <None Include="Resources\ArrowLeftMouseDown.png" />
+    <None Include="Resources\ArrowLeftHover.png" />
+    <None Include="Resources\ArrowLeftHover.jpg" />
     <None Include="Resources\splashLogos.png" />
     <None Include="Resources\splashLogos.jpg" />
     <None Include="Resources\ArrowRight.png" />

@@ -31,18 +31,20 @@
             this.btnContinue = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.tbIPAddress = new System.Windows.Forms.TextBox();
+            this.numPort = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnPrevious = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbState = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.SuspendLayout();
             // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.btnContinue.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnContinue.FlatAppearance.BorderSize = 0;
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -58,7 +60,6 @@
             this.btnContinue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnContinue_MouseDown);
             this.btnContinue.MouseEnter += new System.EventHandler(this.btnContinue_MouseEnter);
             this.btnContinue.MouseLeave += new System.EventHandler(this.btnContinue_MouseLeave);
-            this.btnContinue.MouseHover += new System.EventHandler(this.btnContinue_MouseHover);
             this.btnContinue.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnContinue_MouseUp);
             // 
             // label2
@@ -85,33 +86,34 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Connect to the App Server";
             // 
-            // textBox1
+            // tbIPAddress
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(316, 361);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 37);
-            this.textBox1.TabIndex = 8;
+            this.tbIPAddress.Font = new System.Drawing.Font("Century Gothic", 18.25F);
+            this.tbIPAddress.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbIPAddress.Location = new System.Drawing.Point(316, 361);
+            this.tbIPAddress.Name = "tbIPAddress";
+            this.tbIPAddress.Size = new System.Drawing.Size(212, 37);
+            this.tbIPAddress.TabIndex = 8;
+            this.tbIPAddress.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // numericUpDown1
+            // numPort
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.numericUpDown1.Location = new System.Drawing.Point(534, 361);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numPort.Font = new System.Drawing.Font("Century Gothic", 18F);
+            this.numPort.Location = new System.Drawing.Point(534, 361);
+            this.numPort.Maximum = new decimal(new int[] {
             80000,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numPort.Minimum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 37);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numPort.Name = "numPort";
+            this.numPort.Size = new System.Drawing.Size(120, 37);
+            this.numPort.TabIndex = 9;
+            this.numPort.Value = new decimal(new int[] {
             255,
             0,
             0,
@@ -144,7 +146,7 @@
             this.btnPrevious.AutoSize = true;
             this.btnPrevious.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrevious.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.btnPrevious.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -169,19 +171,43 @@
             this.btnPrevious.MouseHover += new System.EventHandler(this.btnPrevious_MouseHover);
             this.btnPrevious.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPrevious_MouseUp);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18.25F);
+            this.label5.Location = new System.Drawing.Point(310, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(180, 31);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Server Status :";
+            // 
+            // lbState
+            // 
+            this.lbState.AutoSize = true;
+            this.lbState.BackColor = System.Drawing.Color.Transparent;
+            this.lbState.Font = new System.Drawing.Font("Century Gothic", 18.25F);
+            this.lbState.Location = new System.Drawing.Point(528, 270);
+            this.lbState.Name = "lbState";
+            this.lbState.Size = new System.Drawing.Size(202, 31);
+            this.lbState.TabIndex = 15;
+            this.lbState.Text = "Not Connected";
+            // 
             // Connection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1112, 829);
+            this.Controls.Add(this.lbState);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numPort);
+            this.Controls.Add(this.tbIPAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,7 +218,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connection";
             this.Load += new System.EventHandler(this.Connection_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPort)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,11 +228,13 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox tbIPAddress;
+        private System.Windows.Forms.NumericUpDown numPort;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbState;
     }
 }

@@ -106,7 +106,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1112, 829);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.label2);

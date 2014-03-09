@@ -37,9 +37,9 @@
             this.lbProg = new System.Windows.Forms.Label();
             this.lbPy = new System.Windows.Forms.Label();
             this.lbAge = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbSurname = new System.Windows.Forms.TextBox();
+            this.tbAge = new System.Windows.Forms.TextBox();
             this.rdoProgY = new System.Windows.Forms.RadioButton();
             this.rdoProgN = new System.Windows.Forms.RadioButton();
             this.rdoPythonN = new System.Windows.Forms.RadioButton();
@@ -185,29 +185,32 @@
             this.lbAge.TabIndex = 16;
             this.lbAge.Text = "Age";
             // 
-            // textBox1
+            // tbFirstName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.textBox1.Location = new System.Drawing.Point(169, 268);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 37);
-            this.textBox1.TabIndex = 17;
+            this.tbFirstName.Font = new System.Drawing.Font("Century Gothic", 18.25F);
+            this.tbFirstName.Location = new System.Drawing.Point(169, 268);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(203, 37);
+            this.tbFirstName.TabIndex = 17;
+            this.tbFirstName.Tag = "First Name";
             // 
-            // textBox2
+            // tbSurname
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.textBox2.Location = new System.Drawing.Point(169, 364);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 37);
-            this.textBox2.TabIndex = 18;
+            this.tbSurname.Font = new System.Drawing.Font("Century Gothic", 18.25F);
+            this.tbSurname.Location = new System.Drawing.Point(169, 364);
+            this.tbSurname.Name = "tbSurname";
+            this.tbSurname.Size = new System.Drawing.Size(203, 37);
+            this.tbSurname.TabIndex = 18;
+            this.tbSurname.Tag = "Surname";
             // 
-            // textBox3
+            // tbAge
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.textBox3.Location = new System.Drawing.Point(168, 444);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(61, 37);
-            this.textBox3.TabIndex = 19;
+            this.tbAge.Font = new System.Drawing.Font("Century Gothic", 18.25F);
+            this.tbAge.Location = new System.Drawing.Point(168, 444);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(61, 37);
+            this.tbAge.TabIndex = 19;
+            this.tbAge.Tag = "Age";
             // 
             // rdoProgY
             // 
@@ -264,15 +267,15 @@
             // Prequery
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CIP.Properties.Resources.gradient_background_wallpaper_u___ibackgroundz_com;
+            this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1112, 829);
             this.Controls.Add(this.rdoPythonN);
             this.Controls.Add(this.rdoPythonY);
             this.Controls.Add(this.rdoProgN);
             this.Controls.Add(this.rdoProgY);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbAge);
+            this.Controls.Add(this.tbSurname);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lbAge);
             this.Controls.Add(this.lbPy);
             this.Controls.Add(this.lbProg);
@@ -287,6 +290,7 @@
             this.Name = "Prequery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Survey";
+            this.Load += new System.EventHandler(this.Prequery_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,9 +307,9 @@
         private System.Windows.Forms.Label lbProg;
         private System.Windows.Forms.Label lbPy;
         private System.Windows.Forms.Label lbAge;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbSurname;
+        private System.Windows.Forms.TextBox tbAge;
         private System.Windows.Forms.RadioButton rdoProgY;
         private System.Windows.Forms.RadioButton rdoProgN;
         private System.Windows.Forms.RadioButton rdoPythonN;

@@ -73,6 +73,36 @@ namespace CIP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ArrowLeftClick {
+            get {
+                object obj = ResourceManager.GetObject("ArrowLeftClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArrowLeftHover {
+            get {
+                object obj = ResourceManager.GetObject("ArrowLeftHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArrowLeftMouseDown {
+            get {
+                object obj = ResourceManager.GetObject("ArrowLeftMouseDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ArrowRight {
             get {
                 object obj = ResourceManager.GetObject("ArrowRight", resourceCulture);
@@ -83,9 +113,39 @@ namespace CIP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gradient_background_wallpaper_u___ibackgroundz_com {
+        internal static System.Drawing.Bitmap ArrowRightClick {
             get {
-                object obj = ResourceManager.GetObject("gradient-background-wallpaper-u-.-ibackgroundz.com", resourceCulture);
+                object obj = ResourceManager.GetObject("ArrowRightClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArrowRightHover {
+            get {
+                object obj = ResourceManager.GetObject("ArrowRightHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background {
+            get {
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InfoPannel {
+            get {
+                object obj = ResourceManager.GetObject("InfoPannel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +166,16 @@ namespace CIP.Properties {
         internal static System.Drawing.Bitmap splashLogos1 {
             get {
                 object obj = ResourceManager.GetObject("splashLogos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap splashLogos2 {
+            get {
+                object obj = ResourceManager.GetObject("splashLogos2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

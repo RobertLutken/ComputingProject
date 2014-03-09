@@ -10,11 +10,12 @@ using System.IO;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Drawing;
+using Utilitys;
 namespace CIP
 {
     class Utils
     {
-
+        Utilitys.TextCheck textCheck = new Utilitys.TextCheck();
         static public int isInt(TextBox tb)
         {
             string value = tb.Text;
@@ -52,6 +53,17 @@ namespace CIP
            }
            return localIP;
        }
+
+
+
+      static public bool TextCheck(TextBox tb1, TextBox tb2, TextBox tb3)
+      {
+
+
+          Utilitys.TextCheck textCheck = new Utilitys.TextCheck();
+          return textCheck.ExecuteCheck(tb1, tb2, tb3);
+      }
+
     
     }
 }
