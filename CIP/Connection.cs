@@ -11,10 +11,17 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.IO;
 using System.Net;
+using Utilitys;
+using UserHandler;
 namespace CIP
 {
     public partial class Connection : Form
     {
+
+
+        // Create our first Client
+        Client client = new Client();
+        
         public Connection()
         {
             InitializeComponent();
@@ -66,77 +73,62 @@ namespace CIP
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            //client.ClientServerPort = int.Parse(numPort.Value.ToString());
+            //client.ClientServerIP = tbIPAddress.Text; // IP Address name / IP
+            //client.PythonCode = " "; // So we dont execute nothing each time the client is updated
+            //client.ClientID = client.GetLocalIPAddress();
+           // int serverPort = portNum;
 
-            int portNum = int.Parse(numPort.Value.ToString());
-            String server = tbIPAddress.Text.ToString(); // IP Address name / IP
-
-
-            string initClient = "Helloworld";// String to send 
-
-            byte[] byteBuffer = Encoding.ASCII.GetBytes(initClient);// Get number of bytes
-
-            int serverPort = portNum;
-
-            Socket socket = null;
-
-            bool ConnectionAlive = false;
+            bool ConnectionOK= true;
+            // Need much better validation on this !
+            if (string.IsNullOrEmpty(tbIPAddress.Text) && checkBox1.Checked == false)
+            {
+                ConnectionOK = false;
+            }
+            else if (checkBox1.Checked == true && !string.IsNullOrEmpty(tbIPAddress.Text))
+            {
+                MessageBox.Show("Please select a server, you cant use a local and remote server at the same time \n");
+            }
+            UserHandler.User.ServerIP = tbIPAddress.Text;
+            UserHandler.User.ServerPort = int.Parse(numPort.Value.ToString());
+           
             try
             {
-
-                // Create a new Socket
-                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                //Create an end point (to get where the connection is supposed to end)
-
-                IPEndPoint serverEndPoint = new IPEndPoint(Dns.GetHostEntry(server).AddressList[0], serverPort);
-
-                // Attempt to  connect to end point
-                socket.Connect(serverEndPoint);
-
-                lbState.Text = "Connecting To server\nSending hellooo!";
-
-                socket.Send(byteBuffer, 0, byteBuffer.Length, SocketFlags.None);
-                lbState.Text += "\nSuccessfully Sent {0} bytes to server..."+ byteBuffer.Length.ToString();
-
-                int totalBytesRCVD = 0; // Total number of bytes received 
-                int bytesRCVD = 0; // bytes in current read
-
-                while (totalBytesRCVD < byteBuffer.Length)
-                {
-
-                    if((bytesRCVD = socket.Receive(byteBuffer, totalBytesRCVD, byteBuffer.Length - totalBytesRCVD, SocketFlags.None)) == 0)
-                    {
-                        lbState.Text += "Connection Closed too soon!";
-                        ConnectionAlive = false;
-                        break;
-                        
-                    }
-                    totalBytesRCVD += bytesRCVD;
-                }
-                ConnectionAlive = true;
-                lbState.Text += "Receved bytes from server" + totalBytesRCVD.ToString() + Encoding.ASCII.GetString(byteBuffer, 0, totalBytesRCVD);
+                
+                //client.SendOnNetwork(client.GetIPV4(client.ClientServerIP), client.ClientServerPort, client);
+                //AsyncSocks.AsynchronousClient.Echo(UserHandler.User.ServerIP, UserHandler.User.ServerPort);
+               
+                
 
             } catch (Exception err)
             {
-                MessageBox.Show(this, err.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ConnectionAlive = false;
+              //  MessageBox.Show(this, err.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Socket Error" + err.Message);
+                ConnectionOK = false;
             }
             finally
             {
-                socket.Close();
+                //socket.Close();
             }
           
-            if (ConnectionAlive == true)
+            if (ConnectionOK == true)
             {
-                MessageBox.Show(this, "Connected to server : " + server + " on Port : " + portNum,"Connected !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                MessageBox.Show(this, "Connected to server : " + User.ServerIP + " on Port : " +  User.ServerPort ,"Connected !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Prequery pq = new Prequery();
+
                 EnableDoubleBuffering();
                 this.Hide();
+
+                // First save to the temp (this will be the start of the persistent file 
+                //client.WriteSeralizeFile();
+
+
                 pq.Show();
             }
             else
             {
-                MessageBox.Show(this, "Could not connect to server : " + server + " on Port : " + portNum + "\nPlease try again!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Could not connect to server : " + UserHandler.User.ServerIP + " on Port : " + UserHandler.User.ServerPort + "\nPlease try again!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             
@@ -186,6 +178,25 @@ namespace CIP
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            // If we are checked
+            if (checkBox1.Checked)
+            {
+                // If the ip address is empty or the use local host is empty, then set it
+                if (tbIPAddress != null || UserHandler.User.UseLocalHost == true)
+                {
+                    UserHandler.User.UseLocalHost = true;
+                    MessageBox.Show("You are now offline !\n Using this computer only.\n");
+                } 
+            
+            }
+     
+           
+
             
         }
 

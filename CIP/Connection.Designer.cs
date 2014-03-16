@@ -38,6 +38,9 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lbState = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +56,7 @@
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnContinue.Size = new System.Drawing.Size(156, 829);
-            this.btnContinue.TabIndex = 13;
+            this.btnContinue.TabIndex = 12;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             this.btnContinue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnContinue_MouseClick);
@@ -88,9 +91,12 @@
             // 
             // tbIPAddress
             // 
+            this.tbIPAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbIPAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.tbIPAddress.Font = new System.Drawing.Font("Century Gothic", 18.25F);
             this.tbIPAddress.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbIPAddress.Location = new System.Drawing.Point(316, 361);
+            this.tbIPAddress.MaxLength = 32;
             this.tbIPAddress.Name = "tbIPAddress";
             this.tbIPAddress.Size = new System.Drawing.Size(212, 37);
             this.tbIPAddress.TabIndex = 8;
@@ -114,7 +120,7 @@
             this.numPort.Size = new System.Drawing.Size(120, 37);
             this.numPort.TabIndex = 9;
             this.numPort.Value = new decimal(new int[] {
-            255,
+            2500,
             0,
             0,
             0});
@@ -138,7 +144,7 @@
             this.label4.Location = new System.Drawing.Point(544, 319);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 30);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 19;
             this.label4.Text = "on Port";
             // 
             // btnPrevious
@@ -159,7 +165,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPrevious.Size = new System.Drawing.Size(156, 829);
-            this.btnPrevious.TabIndex = 12;
+            this.btnPrevious.TabIndex = 20;
             this.btnPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPrevious.UseVisualStyleBackColor = false;
@@ -193,6 +199,38 @@
             this.lbState.TabIndex = 15;
             this.lbState.Text = "Not Connected";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(311, 422);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 30);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Or";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(311, 484);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(446, 30);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Use your local host ( this computer) !";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Location = new System.Drawing.Point(763, 481);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 47);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Connection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -200,6 +238,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1112, 829);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbState);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnContinue);
@@ -236,5 +277,8 @@
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbState;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

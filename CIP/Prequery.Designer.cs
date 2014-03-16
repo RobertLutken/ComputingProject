@@ -44,6 +44,10 @@
             this.rdoProgN = new System.Windows.Forms.RadioButton();
             this.rdoPythonN = new System.Windows.Forms.RadioButton();
             this.rdoPythonY = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnContinue
@@ -157,7 +161,7 @@
             this.lbProg.AutoSize = true;
             this.lbProg.BackColor = System.Drawing.Color.Transparent;
             this.lbProg.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.lbProg.Location = new System.Drawing.Point(163, 484);
+            this.lbProg.Location = new System.Drawing.Point(3, 9);
             this.lbProg.Name = "lbProg";
             this.lbProg.Size = new System.Drawing.Size(396, 31);
             this.lbProg.TabIndex = 14;
@@ -168,7 +172,7 @@
             this.lbPy.AutoSize = true;
             this.lbPy.BackColor = System.Drawing.Color.Transparent;
             this.lbPy.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.lbPy.Location = new System.Drawing.Point(163, 593);
+            this.lbPy.Location = new System.Drawing.Point(3, 14);
             this.lbPy.Name = "lbPy";
             this.lbPy.Size = new System.Drawing.Size(505, 31);
             this.lbPy.TabIndex = 15;
@@ -193,6 +197,7 @@
             this.tbFirstName.Size = new System.Drawing.Size(203, 37);
             this.tbFirstName.TabIndex = 17;
             this.tbFirstName.Tag = "First Name";
+            this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
             // 
             // tbSurname
             // 
@@ -217,68 +222,90 @@
             this.rdoProgY.AutoSize = true;
             this.rdoProgY.BackColor = System.Drawing.Color.Transparent;
             this.rdoProgY.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.rdoProgY.Location = new System.Drawing.Point(169, 538);
+            this.rdoProgY.Location = new System.Drawing.Point(9, 63);
             this.rdoProgY.Name = "rdoProgY";
             this.rdoProgY.Size = new System.Drawing.Size(74, 35);
             this.rdoProgY.TabIndex = 20;
             this.rdoProgY.TabStop = true;
             this.rdoProgY.Text = "Yes";
             this.rdoProgY.UseVisualStyleBackColor = false;
+            this.rdoProgY.CheckedChanged += new System.EventHandler(this.rdoProgY_CheckedChanged);
             // 
             // rdoProgN
             // 
             this.rdoProgN.AutoSize = true;
             this.rdoProgN.BackColor = System.Drawing.Color.Transparent;
             this.rdoProgN.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.rdoProgN.Location = new System.Drawing.Point(298, 538);
+            this.rdoProgN.Location = new System.Drawing.Point(138, 63);
             this.rdoProgN.Name = "rdoProgN";
             this.rdoProgN.Size = new System.Drawing.Size(66, 35);
             this.rdoProgN.TabIndex = 21;
             this.rdoProgN.TabStop = true;
             this.rdoProgN.Text = "No";
             this.rdoProgN.UseVisualStyleBackColor = false;
+            this.rdoProgN.CheckedChanged += new System.EventHandler(this.rdoProgN_CheckedChanged);
             // 
             // rdoPythonN
             // 
             this.rdoPythonN.AutoSize = true;
             this.rdoPythonN.BackColor = System.Drawing.Color.Transparent;
             this.rdoPythonN.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.rdoPythonN.Location = new System.Drawing.Point(297, 644);
+            this.rdoPythonN.Location = new System.Drawing.Point(138, 48);
             this.rdoPythonN.Name = "rdoPythonN";
             this.rdoPythonN.Size = new System.Drawing.Size(66, 35);
             this.rdoPythonN.TabIndex = 23;
             this.rdoPythonN.TabStop = true;
             this.rdoPythonN.Text = "No";
             this.rdoPythonN.UseVisualStyleBackColor = false;
+            this.rdoPythonN.CheckedChanged += new System.EventHandler(this.rdoPythonN_CheckedChanged);
             // 
             // rdoPythonY
             // 
             this.rdoPythonY.AutoSize = true;
             this.rdoPythonY.BackColor = System.Drawing.Color.Transparent;
             this.rdoPythonY.Font = new System.Drawing.Font("Century Gothic", 18.25F);
-            this.rdoPythonY.Location = new System.Drawing.Point(168, 644);
+            this.rdoPythonY.Location = new System.Drawing.Point(9, 48);
             this.rdoPythonY.Name = "rdoPythonY";
             this.rdoPythonY.Size = new System.Drawing.Size(74, 35);
             this.rdoPythonY.TabIndex = 22;
             this.rdoPythonY.TabStop = true;
             this.rdoPythonY.Text = "Yes";
             this.rdoPythonY.UseVisualStyleBackColor = false;
+            this.rdoPythonY.CheckedChanged += new System.EventHandler(this.rdoPythonY_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lbProg);
+            this.panel1.Controls.Add(this.rdoProgY);
+            this.panel1.Controls.Add(this.rdoProgN);
+            this.panel1.Location = new System.Drawing.Point(169, 504);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(394, 100);
+            this.panel1.TabIndex = 24;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.lbPy);
+            this.panel6.Controls.Add(this.rdoPythonY);
+            this.panel6.Controls.Add(this.rdoPythonN);
+            this.panel6.Location = new System.Drawing.Point(168, 610);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(511, 100);
+            this.panel6.TabIndex = 30;
             // 
             // Prequery
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1112, 829);
-            this.Controls.Add(this.rdoPythonN);
-            this.Controls.Add(this.rdoPythonY);
-            this.Controls.Add(this.rdoProgN);
-            this.Controls.Add(this.rdoProgY);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbAge);
             this.Controls.Add(this.tbSurname);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lbAge);
-            this.Controls.Add(this.lbPy);
-            this.Controls.Add(this.lbProg);
             this.Controls.Add(this.lbSurname);
             this.Controls.Add(this.lbFirstname);
             this.Controls.Add(this.label2);
@@ -291,6 +318,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Survey";
             this.Load += new System.EventHandler(this.Prequery_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +345,7 @@
         private System.Windows.Forms.RadioButton rdoProgN;
         private System.Windows.Forms.RadioButton rdoPythonN;
         private System.Windows.Forms.RadioButton rdoPythonY;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel6;
     }
 }

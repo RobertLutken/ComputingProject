@@ -38,6 +38,10 @@
             this.lbLessonDescription = new System.Windows.Forms.Label();
             this.btnContinue = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lbLevelValue = new System.Windows.Forms.Label();
+            this.lbScoreValue = new System.Windows.Forms.Label();
+            this.lbLevel = new System.Windows.Forms.Label();
+            this.lbScore = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,14 +81,14 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lbNetBios);
             this.panel1.Controls.Add(this.lbTime);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(728, 0);
+            this.panel1.Location = new System.Drawing.Point(725, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 829);
+            this.panel1.Size = new System.Drawing.Size(215, 120);
             this.panel1.TabIndex = 2;
             // 
             // lbNetBios
@@ -92,7 +96,7 @@
             this.lbNetBios.AutoEllipsis = true;
             this.lbNetBios.AutoSize = true;
             this.lbNetBios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNetBios.Location = new System.Drawing.Point(76, 56);
+            this.lbNetBios.Location = new System.Drawing.Point(61, 57);
             this.lbNetBios.Name = "lbNetBios";
             this.lbNetBios.Size = new System.Drawing.Size(57, 21);
             this.lbNetBios.TabIndex = 1;
@@ -134,6 +138,7 @@
             this.lbLessonDescription.TabIndex = 5;
             this.lbLessonDescription.Text = "Welcome to your first tutorial ! \r\nBelow is a big box where you write your code.\r" +
     "\nType the words :\r\nprint \"hello world\"\r\n\r\nThen press the continue arrow ! ";
+            this.lbLessonDescription.LocationChanged += new System.EventHandler(this.lbLessonDescription_LocationChanged);
             this.lbLessonDescription.Click += new System.EventHandler(this.lbLessonDescription_Click);
             // 
             // btnContinue
@@ -164,6 +169,7 @@
             this.btnContinue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             this.btnContinue.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.btnContinue.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btnContinue.MouseHover += new System.EventHandler(this.button1_MouseEnter);
             this.btnContinue.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
             // 
             // richTextBox1
@@ -175,7 +181,7 @@
             this.richTextBox1.EnableAutoDragDrop = true;
             this.richTextBox1.Font = new System.Drawing.Font("Consolas", 20F);
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox1.Location = new System.Drawing.Point(171, 268);
+            this.richTextBox1.Location = new System.Drawing.Point(171, 291);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.richTextBox1.Size = new System.Drawing.Size(779, 435);
@@ -183,24 +189,79 @@
             this.richTextBox1.Text = "print \"Hello world\"";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
+            // lbLevelValue
+            // 
+            this.lbLevelValue.AutoSize = true;
+            this.lbLevelValue.BackColor = System.Drawing.Color.Transparent;
+            this.lbLevelValue.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevelValue.ForeColor = System.Drawing.Color.White;
+            this.lbLevelValue.Location = new System.Drawing.Point(496, 9);
+            this.lbLevelValue.Name = "lbLevelValue";
+            this.lbLevelValue.Size = new System.Drawing.Size(31, 36);
+            this.lbLevelValue.TabIndex = 13;
+            this.lbLevelValue.Text = "0";
+            // 
+            // lbScoreValue
+            // 
+            this.lbScoreValue.AutoSize = true;
+            this.lbScoreValue.BackColor = System.Drawing.Color.Transparent;
+            this.lbScoreValue.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbScoreValue.ForeColor = System.Drawing.Color.White;
+            this.lbScoreValue.Location = new System.Drawing.Point(680, 9);
+            this.lbScoreValue.Name = "lbScoreValue";
+            this.lbScoreValue.Size = new System.Drawing.Size(31, 36);
+            this.lbScoreValue.TabIndex = 12;
+            this.lbScoreValue.Text = "0";
+            // 
+            // lbLevel
+            // 
+            this.lbLevel.AutoSize = true;
+            this.lbLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lbLevel.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevel.ForeColor = System.Drawing.Color.White;
+            this.lbLevel.Location = new System.Drawing.Point(369, 9);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(104, 36);
+            this.lbLevel.TabIndex = 11;
+            this.lbLevel.Text = "Level :";
+            // 
+            // lbScore
+            // 
+            this.lbScore.AutoSize = true;
+            this.lbScore.BackColor = System.Drawing.Color.Transparent;
+            this.lbScore.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbScore.ForeColor = System.Drawing.Color.White;
+            this.lbScore.Location = new System.Drawing.Point(549, 9);
+            this.lbScore.Name = "lbScore";
+            this.lbScore.Size = new System.Drawing.Size(110, 36);
+            this.lbScore.TabIndex = 10;
+            this.lbScore.Text = "Score :";
+            // 
             // AppMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImage = global::CIP.Properties.Resources.Background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1112, 829);
+            this.Controls.Add(this.lbLevelValue);
+            this.Controls.Add(this.lbScoreValue);
+            this.Controls.Add(this.lbLevel);
+            this.Controls.Add(this.lbScore);
             this.Controls.Add(this.lbLessonDescription);
             this.Controls.Add(this.lbLessonTitle);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnContinue);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AppMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Main Application";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.LocationChanged += new System.EventHandler(this.AppMain_LocationChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -219,6 +280,10 @@
         private System.Windows.Forms.Label lbLessonDescription;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lbLevelValue;
+        private System.Windows.Forms.Label lbScoreValue;
+        private System.Windows.Forms.Label lbLevel;
+        private System.Windows.Forms.Label lbScore;
     }
 }
 

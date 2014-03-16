@@ -7,12 +7,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using CIP.Properties;
-
+using Utilitys;
+using UserHandler;
 namespace CIP
 {
     public partial class Prequery : Form
     {
-
+      
+       
         public Prequery()
         {
             InitializeComponent();
@@ -90,7 +92,22 @@ namespace CIP
             
            if( Utils.TextCheck(tbFirstName,tbSurname,tbAge))
             {
+                User.Forname = tbFirstName.Text;
+                User.Surname = tbSurname.Text;
+                User.HasProgrammedBefore = ProgrammedBefore;
+                User.HasPorgrammedPythonBefore = ProgrammedPython;
+                User.Age = int.Parse(tbAge.Text);
 
+                if (Utilitys.Utils.debugging)
+                {
+                    MessageBox.Show(this, "You entered: \nForname : " +
+                        UserHandler.User.Forname.ToString() +
+                        "\nSurname : " + UserHandler.User.Surname.ToString() +
+                        "\nAge : " + UserHandler.User.Age.ToString() +
+                        "\nHas Programmed Python : " + UserHandler.User.HasPorgrammedPythonBefore.ToString() +
+                        "\nHas Programmed before : " + UserHandler.User.HasProgrammedBefore.ToString(),
+                        "Debugging !", MessageBoxButtons.OK);
+                }
                 AppMain app = new AppMain();
                 EnableDoubleBuffering();
                 app.Show();
@@ -112,6 +129,36 @@ namespace CIP
 
         }
 
-       
+        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoProgY_CheckedChanged(object sender, EventArgs e)
+        {
+            ProgrammedBefore = true;
+
+        }
+
+        private void rdoProgN_CheckedChanged(object sender, EventArgs e)
+        {
+            ProgrammedBefore = false;
+        }
+
+        private void rdoPythonY_CheckedChanged(object sender, EventArgs e)
+        {
+            ProgrammedPython = true;
+        }
+
+        private void rdoPythonN_CheckedChanged(object sender, EventArgs e)
+        {
+            ProgrammedPython = false;
+        }
+
+
+
+        public bool ProgrammedPython { get; set; }
+
+        public bool ProgrammedBefore { get; set; }
     }
 }
