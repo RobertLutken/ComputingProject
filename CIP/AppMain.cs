@@ -18,25 +18,29 @@ using System.Net.Sockets;
 using System.Net;
 using UserHandler;
 using System.Threading;
+using System.Reflection;
 namespace CIP
 {
     public partial class AppMain : Form
     {
-        SyntaxHighlighter syHighlight = new SyntaxHighlighter();
-        Client client = new Client();
+       // SyntaxHighlighter syHighlight = new SyntaxHighlighter();
+        //Client client = new Client();
  
         Results resultsWND;
-       
+        public List<Tutorial> tuts = new List<Tutorial>();
         public AppMain()
         {
             this.DoubleBuffered = true;
             InitializeComponent();
+            SetupTutorials();
             timer1.Start();
             lbNetBios.Text = Environment.UserName.ToString() + "@" + Utils.GetLocalIPAddress();
-            client = client.ReadSeralizedFile();
+           
+            //client = client.ReadSeralizedFile();
             UserHandler.User.CurrentScore = 0;
-            UserHandler.User.CurrentLevel = 1;
+            UserHandler.User.CurrentLevel = 0;
             
+
         }
         public void EnableDoubleBuffering()
         {
@@ -72,7 +76,7 @@ namespace CIP
             btnContinue.Image = Resources.ArrowRightClick;
 
             User.Code = richTextBox1.Text.ToString();
-           
+            
             if (User.UseLocalHost)
             {
               User.Results =  Utilitys.Utils.ExecutePython(User.Code);
@@ -94,20 +98,62 @@ namespace CIP
                     resultsWND.Start();
                 }
 
-                UserHandler.User.CurrentScore += 1;
-                UserHandler.User.CurrentLevel += 1;
-                lbLevelValue.Text = UserHandler.User.CurrentLevel.ToString();
-                lbScoreValue.Text= UserHandler.User.CurrentScore.ToString();
+               
+               
+             
+                //Set Next Level
+                if (UserHandler.User.CurrentLevel == 0)
+                {
+                    MessageBox.Show(this,"CONGATS!\nAs you can see on your right is the first programm you have written.\nYou are now a programmer ! \nIt's not that difficult is it?\nWelcome to relm of programmers.....","Success!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                }
+                // Set score
+                 if (richTextBox1.Text.EndsWith("\n"))
+                {
+                    //lbScoreValue.Text = richTextBox1.GetLineFromCharIndex(richTextBox1.TextLength + 1).ToString();
+                    UserHandler.User.CurrentScore = richTextBox1.GetLineFromCharIndex(richTextBox1.TextLength + 1);
+                    lbScoreValue.Text = UserHandler.User.CurrentScore.ToString();
+                }
+                else
+                richTextBox1.AppendText("\n");
+               // lbScoreValue.Text = richTextBox1.GetLineFromCharIndex(richTextBox1.TextLength).ToString();
+
+                UserHandler.User.CurrentScore +=  richTextBox1.GetLineFromCharIndex
+                    (richTextBox1.TextLength);
+                lbScoreValue.Text = UserHandler.User.CurrentScore.ToString();
+
+                // Set Next Level
+                if (UserHandler.User.CurrentLevel == tuts.Count)
+                {
+                    SetNextTutorial(tuts.ElementAt(tuts.Count - 1));
+                }
+                else if (UserHandler.User.CurrentLevel <= 4)
+                {   
+                   
+                    SetNextTutorial(tuts.ElementAt(UserHandler.User.CurrentLevel));
+                     UserHandler.User.CurrentLevel += 1;
+                } 
+                
+                //Clear textbox 
+                richTextBox1.Clear();
 
             }
             else if(!User.CodeOK)
             {
                 // show error
-                    MessageBox.Show("An error occured in your python code"+ User.Results);
+                MessageBox.Show("An error occured in your python code : \n\n"+ User.Results);
                     
                     
             }
+
+           
+               
             
+           // SetNextTutorial(GetCurrentTutorial(UserHandler.User.CurrentLevel));
+            //lbLevelValue.Text = UserHandler.User.CurrentLevel.ToString();
+           
+            
+          
             EnableDoubleBuffering();
             }
         
@@ -129,7 +175,127 @@ namespace CIP
             }
         }
         
-        
+        public void SetupTutorials()
+        {
+
+          
+            
+           
+            tuts.Add(new Tutorial()
+            {
+                TutorialLesson = GetTutorial("Tutorial1"),
+                TutorialTitle = "Hello world",
+                TutorialNumber = 1
+            }
+                );
+
+            tuts.Add(new Tutorial()
+                {
+                    TutorialTitle = @"Comments",
+                    TutorialNumber  = 2,
+                    TutorialLesson = GetTutorial("Tutorial2")
+                });
+
+            tuts.Add(new Tutorial()
+                {
+
+                    TutorialTitle = "Variables",
+                    TutorialNumber= 3,
+                    TutorialLesson = GetTutorial("Tutorial3")
+                });
+             tuts.Add(new Tutorial()
+            {
+               TutorialNumber = 4,
+               TutorialTitle = "Operators",
+               TutorialLesson = GetTutorial("Tutorial4")
+            });
+
+             
+                
+                 //  Load up  first tutorial straigt away
+             lbLevelValue.Text = tuts.ElementAt(0).TutorialNumber.ToString();
+             lbLessonTitle.Text = tuts.ElementAt(0).TutorialTitle.ToString();
+             richTextBox2.Text = tuts.ElementAt(0).TutorialLesson.ToString();
+
+             //TextCheck.Highlight(richTextBox2, lbTime);
+             
+        }
+        public void SetNextTutorial(Tutorial currentLesson)
+        {
+            foreach (Tutorial nextTutorial in tuts)
+            { 
+
+
+                if(nextTutorial.TutorialNumber <= currentLesson.TutorialNumber)
+                {
+                    
+                    lbLevelValue.Text = nextTutorial.TutorialNumber.ToString();
+                    lbLessonTitle.Text = nextTutorial.TutorialTitle.ToString();
+                    richTextBox2.Text = nextTutorial.TutorialLesson.ToString();
+                }
+                //this.lbLevel = tut numb
+                //this.lbTitle = tut title
+                // this.lbHE = tut
+            }
+        }
+        public void SetPreviousTutorial(Tutorial currentLesson)
+        {
+
+        foreach(Tutorial currenttut in tuts)
+        {
+            if(currenttut.TutorialNumber == currentLesson.TutorialNumber)
+            {
+                lbLevelValue.Text = currenttut.TutorialNumber.ToString();
+                lbLessonTitle.Text = currenttut.TutorialTitle.ToString();
+                richTextBox2.Text = currenttut.TutorialLesson.ToString();
+            }
+        }
+              
+                //this.lbLevel = tut numb
+                //this.lbTitle = tut title
+                // this.lbHE = tut
+            
+        }
+        public Tutorial GetCurrentTutorial(int current)
+        {
+            foreach(Tutorial thistut in tuts)
+            {
+                if (thistut.TutorialNumber == current)
+                {
+                    return thistut;
+                }
+                else
+                    return null; // Should not get here !
+            }
+            return null; // or here
+        }
+        public int GetTutorialByNum(int numtofind)
+        {
+
+            foreach (Tutorial tutorials in tuts)
+            {
+                if (tutorials.TutorialNumber == numtofind)
+                    return tuts.IndexOf(tutorials);
+            }
+            return 0;
+        }
+        public void SetTutorial(int num)
+        {
+
+        }
+        public string GetTutorial (string filename)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "CIP." + filename + ".txt";
+            string result;
+            
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                 result = reader.ReadToEnd();
+            }
+            return result;
+        }
         private void button1_OnMouseEnter(object sender, EventArgs e)
         {
             btnContinue.Image = Resources.ArrowRightHover; //  button1.Image = Image.FromFile(@"U:\Computing Individual Project\Code Base\ComputingProject\CIP\Resources\ArrowLeftHover.png");
@@ -169,10 +335,26 @@ namespace CIP
 
             // if tutorial == beigning 
             //      display Splash
-            Splash splash = new Splash();
-            EnableDoubleBuffering();
-            splash.Show();
-            this.Hide();
+            //if(UserHandler.User.CurrentLevel == 1)
+            //{
+            //    Splash splash = new Splash();
+            //    EnableDoubleBuffering();
+            //    splash.Show(); 
+            //    this.Hide();
+
+            //}
+            if (UserHandler.User.CurrentLevel == 0)
+            {
+                SetNextTutorial(tuts.ElementAt(0));
+            }
+            if (UserHandler.User.CurrentLevel >= 1)
+            {
+                UserHandler.User.CurrentLevel -= 1;
+                SetPreviousTutorial(tuts.ElementAt(UserHandler.User.CurrentLevel ));
+                
+            } 
+          
+           
 
         }
 
@@ -221,74 +403,15 @@ namespace CIP
 
  
 
-        public class SyntaxHighlighter
-        {
+        //public class SyntaxHighlighter
+        //{
 
-            // Take foucs hack to prevent re-selection
-            public void Highlight(RichTextBox tb, Label takeFocus)
-            {
-
-                string keywords = @"\b(and|as|assert|break|class|continue|def|del|elif|else|exept|exec|finally|for|from|global|if|import|in|is|lambda|not|or|pass|raise|return|try|while|with|yeild|print|global)\b";
-                MatchCollection keywordMatches = Regex.Matches(tb.Text, keywords);
-
-                string types = @"\b(bool|int|float|complex|list|tuple|range|str|byte|bytes|NULL|class)\b";
-                MatchCollection typeMatches = Regex.Matches(tb.Text, types);
-
-                string comments = "(\\#.+?$|\"\"\".+?\"\"\")";
-                MatchCollection commentsMatches = Regex.Matches(tb.Text, comments);
-
-                string strings = "\".+?\"";
-                MatchCollection stringsMatches = Regex.Matches(tb.Text, strings);
-
-                int originalPosition = tb.SelectionStart;
-                int originalLength = tb.SelectionLength;
-                Color originalColour = Color.Black;
-                takeFocus.Focus();
-
-                tb.SelectionStart = 0;
-                tb.SelectionLength = tb.Text.Length;
-                tb.SelectionColor = originalColour;
-
-                foreach (Match m in keywordMatches)
-                {
-                    tb.SelectionStart = m.Index;
-                    tb.SelectionLength = m.Length;
-                    tb.SelectionColor = Color.CornflowerBlue;
-
-                }
-
-                foreach (Match m in typeMatches)
-                {
-                    tb.SelectionStart = m.Index;
-                    tb.SelectionLength = m.Length;
-                    tb.SelectionColor = Color.DarkCyan;
-                }
-
-                foreach (Match m in commentsMatches)
-                {
-                    tb.SelectionStart = m.Index;
-                    tb.SelectionLength = m.Length;
-                    tb.SelectionColor = Color.Orange;
-                }
-
-                foreach (Match m in stringsMatches)
-                {
-                    tb.SelectionStart = m.Index;
-                    tb.SelectionLength = m.Length;
-                    tb.SelectionColor = Color.Brown;
-
-                }
-                tb.SelectionStart = originalPosition;
-                tb.SelectionLength = originalLength;
-                tb.SelectionColor = originalColour;
-
-                tb.Focus();
-            }
-        }
+        //   
+        //}
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            syHighlight.Highlight(richTextBox1, lbTime);
+            TextCheck.Highlight(richTextBox1, lbTime);
         }
 
         private void lbLessonDescription_Click(object sender, EventArgs e)
@@ -307,8 +430,25 @@ namespace CIP
             PositionResults();
         }
 
+        private void lbLessonTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
   
 
+
+    }
+    public class Tutorial 
+    {
+        public string TutorialTitle { get; set; }
+        public int TutorialNumber { get; set; }
+        public string TutorialLesson { get; set; }
 
     }
 }

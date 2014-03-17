@@ -45,10 +45,19 @@ namespace CIP
         }
        public void btnContinue_Click(object sender, EventArgs e)
         {
-            Connection connectionWindow = new Connection();
-            EnableDoubleBuffering();
-            connectionWindow.Show();
-            this.Hide();
+            if (UserHandler.User.Age  > 0 && !string.IsNullOrEmpty(UserHandler.User.Forname) && !string.IsNullOrEmpty(UserHandler.User.Surname))
+            {
+                AppMain appMain = new AppMain();
+                appMain.Show();
+                this.Hide();
+            }
+            else
+            {
+                Connection connectionWindow = new Connection();
+                EnableDoubleBuffering();
+                connectionWindow.Show();
+                this.Hide();
+            }
         }
                
         private void Splash_Load(object sender, EventArgs e)

@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppMain));
             this.btnPrevious = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNetBios = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbLessonTitle = new System.Windows.Forms.Label();
-            this.lbLessonDescription = new System.Windows.Forms.Label();
             this.btnContinue = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbLevelValue = new System.Windows.Forms.Label();
             this.lbScoreValue = new System.Windows.Forms.Label();
             this.lbLevel = new System.Windows.Forms.Label();
             this.lbScore = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,26 +122,12 @@
             this.lbLessonTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbLessonTitle.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLessonTitle.ForeColor = System.Drawing.Color.White;
-            this.lbLessonTitle.Location = new System.Drawing.Point(146, 9);
+            this.lbLessonTitle.Location = new System.Drawing.Point(162, 5);
             this.lbLessonTitle.Name = "lbLessonTitle";
-            this.lbLessonTitle.Size = new System.Drawing.Size(217, 42);
+            this.lbLessonTitle.Size = new System.Drawing.Size(166, 42);
             this.lbLessonTitle.TabIndex = 4;
-            this.lbLessonTitle.Text = "Objective 1";
-            // 
-            // lbLessonDescription
-            // 
-            this.lbLessonDescription.AutoSize = true;
-            this.lbLessonDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lbLessonDescription.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLessonDescription.ForeColor = System.Drawing.Color.White;
-            this.lbLessonDescription.Location = new System.Drawing.Point(148, 69);
-            this.lbLessonDescription.Name = "lbLessonDescription";
-            this.lbLessonDescription.Size = new System.Drawing.Size(559, 180);
-            this.lbLessonDescription.TabIndex = 5;
-            this.lbLessonDescription.Text = "Welcome to your first tutorial ! \r\nBelow is a big box where you write your code.\r" +
-    "\nType the words :\r\nprint \"hello world\"\r\n\r\nThen press the continue arrow ! ";
-            this.lbLessonDescription.LocationChanged += new System.EventHandler(this.lbLessonDescription_LocationChanged);
-            this.lbLessonDescription.Click += new System.EventHandler(this.lbLessonDescription_Click);
+            this.lbLessonTitle.Text = "Tutorial 1";
+            this.lbLessonTitle.Click += new System.EventHandler(this.lbLessonTitle_Click);
             // 
             // btnContinue
             // 
@@ -177,16 +165,17 @@
             this.richTextBox1.AcceptsTab = true;
             this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.EnableAutoDragDrop = true;
             this.richTextBox1.Font = new System.Drawing.Font("Consolas", 20F);
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox1.Location = new System.Drawing.Point(171, 291);
+            this.richTextBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.richTextBox1.Location = new System.Drawing.Point(159, 368);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.richTextBox1.Size = new System.Drawing.Size(779, 435);
+            this.richTextBox1.Size = new System.Drawing.Size(791, 449);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "print \"Hello world\"";
+            this.richTextBox1.Text = "Delete mee! ";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // lbLevelValue
@@ -237,6 +226,32 @@
             this.lbScore.TabIndex = 10;
             this.lbScore.Text = "Score :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(152, 323);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(408, 42);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Enter your code here : ";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.White;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox2.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.ForeColor = System.Drawing.Color.DarkRed;
+            this.richTextBox2.Location = new System.Drawing.Point(159, 81);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ShowSelectionMargin = true;
+            this.richTextBox2.Size = new System.Drawing.Size(791, 239);
+            this.richTextBox2.TabIndex = 16;
+            this.richTextBox2.Text = "";
+            // 
             // AppMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -245,11 +260,12 @@
             this.BackgroundImage = global::CIP.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1112, 829);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbLevelValue);
             this.Controls.Add(this.lbScoreValue);
             this.Controls.Add(this.lbLevel);
             this.Controls.Add(this.lbScore);
-            this.Controls.Add(this.lbLessonDescription);
             this.Controls.Add(this.lbLessonTitle);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel1);
@@ -257,8 +273,10 @@
             this.Controls.Add(this.btnContinue);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AppMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Application";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.LocationChanged += new System.EventHandler(this.AppMain_LocationChanged);
@@ -277,13 +295,14 @@
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbNetBios;
         private System.Windows.Forms.Label lbLessonTitle;
-        private System.Windows.Forms.Label lbLessonDescription;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lbLevelValue;
         private System.Windows.Forms.Label lbScoreValue;
         private System.Windows.Forms.Label lbLevel;
         private System.Windows.Forms.Label lbScore;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 

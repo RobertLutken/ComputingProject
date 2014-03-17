@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Utilitys
+namespace Networking
 {
-    public class Class1
+    class Program
     {
-        public int AddNumbers(int a, int b)
+        static void Main(string[] args)
         {
-            return a + b;
         }
     }
 }

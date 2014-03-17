@@ -34,7 +34,13 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>download.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NetworkHandler">
+      <HintPath>..\NetworkHandler\bin\Debug\NetworkHandler.dll</HintPath>
+    </Reference>
     <Reference Include="ScintillaNET">
       <HintPath>C:\ScintillaNET v2.6\ScintillaNET.dll</HintPath>
     </Reference>
@@ -49,6 +55,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UserHandler">
+      <HintPath>..\UserHandler\bin\Debug\UserHandler.dll</HintPath>
+    </Reference>
     <Reference Include="Utilitys">
       <HintPath>..\Utilitys\bin\Debug\Utilitys.dll</HintPath>
     </Reference>
@@ -98,7 +107,7 @@
       <DependentUpon>Prequery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -131,7 +140,17 @@
     <None Include="Resources\ArrowLeft.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="download.ico" />
     <Content Include="Resources\ArrowLeftClick.png" />
+    <EmbeddedResource Include="TextFile1.txt" />
+    <EmbeddedResource Include="Tutorial4.txt" />
+    <EmbeddedResource Include="Tutorial3.txt" />
+    <EmbeddedResource Include="Tutorial2.txt" />
+    <EmbeddedResource Include="Tutorial1.txt" />
+    <None Include="Resources\ServerLogs.txt" />
+    <None Include="Resources\Tutorials.txt" />
+    <None Include="Resources\j29.gif" />
+    <None Include="Resources\PYGIF.bmp" />
     <None Include="Resources\InfoPannel.png" />
     <None Include="Resources\ArrowRightHover.png" />
     <None Include="Resources\ArrowRightClick.png" />
@@ -147,10 +166,6 @@
     <ProjectReference Include="..\AsyncSocks\AsyncSocks.csproj">
       <Project>{0111f97f-b46a-4afb-8e2c-12afa4d2f4d6}</Project>
       <Name>AsyncSocks</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UserHandler\UserHandler.csproj">
-      <Project>{04b4fc65-0526-4611-ae00-76f7052ab678}</Project>
-      <Name>UserHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -81,6 +81,13 @@ namespace CIP
 
             bool ConnectionOK= true;
             // Need much better validation on this !
+            if(checkBox1.Checked)
+            {
+                UserHandler.User.UseLocalHost = true;
+                UserHandler.User.ServerIP = "127.0.0.1";
+                NetworkHandler.ServerHandler localServer = new NetworkHandler.ServerHandler();
+
+            }
             if (string.IsNullOrEmpty(tbIPAddress.Text) && checkBox1.Checked == false)
             {
                 ConnectionOK = false;
@@ -97,9 +104,9 @@ namespace CIP
                 
                 //client.SendOnNetwork(client.GetIPV4(client.ClientServerIP), client.ClientServerPort, client);
                 //AsyncSocks.AsynchronousClient.Echo(UserHandler.User.ServerIP, UserHandler.User.ServerPort);
+               //ConnectionOK =  Utilitys.Utils.SendEcho(UserHandler.User.ServerIP,UserHandler.User.ServerPort, "Echo");
+                ConnectionOK = NetworkHandler.ClientHandler.SendEcho(UserHandler.User.ServerIP, UserHandler.User.ServerPort, "Echo");
                
-                
-
             } catch (Exception err)
             {
               //  MessageBox.Show(this, err.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -114,7 +121,7 @@ namespace CIP
             if (ConnectionOK == true)
             {
                 
-                MessageBox.Show(this, "Connected to server : " + User.ServerIP + " on Port : " +  User.ServerPort ,"Connected !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Connected to server : " + UserHandler.User.ServerIP + " on Port : " +  UserHandler.User.ServerPort ,"Connected !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Prequery pq = new Prequery();
 
                 EnableDoubleBuffering();
@@ -190,6 +197,7 @@ namespace CIP
                 if (tbIPAddress != null || UserHandler.User.UseLocalHost == true)
                 {
                     UserHandler.User.UseLocalHost = true;
+                    UserHandler.User.ServerIP = "127.0.0.1";
                     MessageBox.Show("You are now offline !\n Using this computer only.\n");
                 } 
             

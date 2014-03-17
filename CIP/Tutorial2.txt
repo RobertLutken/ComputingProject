@@ -1,0 +1,24 @@
+//2. Comments 
+When programming large or small projects it is important to comment your code. 
+Commenting is important to show that you understand what the code dose. It helps you say what you want to do in plain English. 
+Often other programmers will read your code as well so it will help others too!
+
+When you write comments they are completely ignored by the python.
+
+To write a comment simply start your sentence with a # symbol. 
+For example :
+print("THIS IS NOT A COMMENT!")
+# "print this is a comment, and is ignored by python !!"
+
+If you want to write more than one line you can use three ''' 
+For example : 
+
+''''
+I am a multi-line 
+comment
+...
+'''
+print ("No longer in comments!")
+
+Try out a single line comment and multi line.
+You can copy the above examples if you want too.

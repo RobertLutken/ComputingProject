@@ -1,0 +1,74 @@
+Tutorials 
+1. Hello world
+
+When programming it is important that we have some way of outputting what the program is doing. 
+Such as calculating results or simply saying hello. 
+
+To get your computer to say hello, in the box below type the words print "Hello world"
+
+The print keyword tells the computer that you want to display something to the screen and the "Hello world" is the sentence that should be displayed. 
+
+After you have finished, press the right > arrow to run your first every program !
+<EOF>
+2. Comments 
+When programming large or small projects it is important to comment your code. 
+Commenting is important to show that you understand what the code dose. It helps you say what you want to do in plain English. 
+Often other programmers will read your code as well so it will help others too!
+
+When you write comments they are completely ignored by the python.
+
+To write a comment simply start your sentence with a # symbol. 
+For example :
+print("THIS IS NOT A COMMENT!")
+# "print this is a comment, and is ignored by python !!"
+
+If you want to write more than one line you can use three ''' 
+For example : 
+
+''''
+I am a multi-line 
+comment
+...
+'''
+print ("No longer in comments!")
+
+Try out a single line comment and multi line.
+You can copy the above examples if you want too.
+<EOF>
+3. Variables 
+
+In python, variables are used to store information. 
+Python lets us declare variables without needing to tell it what variable type it is. 
+
+For example :
+a = 1
+b = 2
+print a + b
+
+if we wanted a to be a decimal number we could quite easily say 
+a = 3.147
+
+or if we wanted b to be a string ( a word )
+b = "Hello" 
+<EOF>
+4. Operators
+
+Mathematical Operations
+These are the arithmetic operations available to you in python
+
+print "1 + 1" # Adds two numbers
+print "1 - 1" # Subtracts two numbers
+print "2 * 2" #	Multiplies two numbers
+print "2 / 4" # Divides two numbers 
+print "3 % 2" # Get's the remainder
+
+Assignment Operators 
+a = 1	# a is equal to 1
+print a
+a += 1	# add one to the current value of a so a is now 2
+print a
+<EOF>
+5. IF Statements
+
+
+Challanges 

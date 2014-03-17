@@ -1,0 +1,16 @@
+//4. Operators
+
+Mathematical Operations
+These are the arithmetic operations available to you in python
+
+print "1 + 1" # Adds two numbers
+print "1 - 1" # Subtracts two numbers
+print "2 * 2" #	Multiplies two numbers
+print "2 / 4" # Divides two numbers 
+print "3 % 2" # Get's the remainder
+
+Assignment Operators 
+a = 1	# a is equal to 1
+print a
+a += 1	# add one to the current value of a so a is now 2
+print a

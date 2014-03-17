@@ -1,0 +1,10 @@
+//1. Hello world
+
+When programming it is important that we have some way of outputting what the program is doing. 
+Such as calculating results or simply saying hello. 
+
+To get your computer to say hello, in the box below type the words print "Hello world"
+
+The print keyword tells the computer that you want to display something to the screen and the "Hello world" is the sentence that should be displayed. 
+
+After you have finished, press the right > arrow to run your first every program !

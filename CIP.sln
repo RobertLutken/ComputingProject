@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIP", "CIP\CIP.csproj", "{A45DB5F4-0A71-4C06-8A12-13BA5B28F242}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04B4FC65-0526-4611-AE00-76F7052AB678} = {04B4FC65-0526-4611-AE00-76F7052AB678}
+		{B0DEDDB5-244E-458F-ACC5-F420498C7320} = {B0DEDDB5-244E-458F-ACC5-F420498C7320}
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B} = {5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilitys", "Utilitys\Utilitys.csproj", "{B0DEDDB5-244E-458F-ACC5-F420498C7320}"
 EndProject
@@ -14,6 +19,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncSocks", "AsyncSocks\AsyncSocks.csproj", "{0111F97F-B46A-4AFB-8E2C-12AFA4D2F4D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PythonServer", "PythonServer\PythonServer.csproj", "{1D299D49-AF09-4911-925E-F41A9AEAA42B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkHandler", "NetworkHandler\NetworkHandler.csproj", "{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7DABB702-F119-4CE8-A229-E4DC63B46727}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +96,16 @@ Global
 		{1D299D49-AF09-4911-925E-F41A9AEAA42B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1D299D49-AF09-4911-925E-F41A9AEAA42B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1D299D49-AF09-4911-925E-F41A9AEAA42B}.Release|Win32.ActiveCfg = Release|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5838F2CB-653B-4F1E-A88A-CA5F6A86E91B}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

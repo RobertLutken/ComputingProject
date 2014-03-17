@@ -1,0 +1,15 @@
+//3. Variables 
+
+In python, variables are used to store information. 
+Python lets us declare variables without needing to tell it what variable type it is. 
+
+For example :
+a = 1
+b = 2
+print a + b
+
+if we wanted a to be a decimal number we could quite easily say 
+a = 3.147
+
+or if we wanted b to be a string ( a word )
+b = "Hello" 
